@@ -1,0 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  background-color: #f5e9d6;
+  color: #241a12;
+  font-family: var(--font-body), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Display headings default to the grotesque, tight */
+h1, h2, h3, h4 {
+  font-family: var(--font-display), system-ui, sans-serif;
+  letter-spacing: -0.02em;
+}
+
+::selection {
+  background: #edb01e;
+  color: #241a12;
+}
+
+/* Focus ring — keyboard accessible, brand yellow */
+:where(a, button, [tabindex]):focus-visible {
+  outline: 3px solid #d89a0c;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Signature yellow highlight swash under a keyword */
+.mark-yellow {
+  background-image: linear-gradient(transparent 62%, #f7ce63 62%);
+  padding: 0 0.05em;
+}
+
+/* Thin plaster grain via layered radial — subtle, no image request */
+.bg-grain {
+  background-image: radial-gradient(rgba(120, 80, 40, 0.05) 1px, transparent 1px);
+  background-size: 4px 4px;
+}
+
+/* Utility: hide scrollbar for the horizontal menu peek */
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }

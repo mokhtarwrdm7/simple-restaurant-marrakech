@@ -1,0 +1,155 @@
+{
+  "meta": {
+    "brand": "Simple Restaurant",
+    "city": "Marrakech",
+    "langs": ["fr", "en"],
+    "voice": "casual, warm, confident, honest — unpretentious like the name",
+    "facts": {
+      "rating": "4.6",
+      "reviewCount": "1528",
+      "igFollowers": "16K",
+      "phoneDisplay": "0693 96 68 16",
+      "phoneTel": "+212693966816",
+      "whatsapp": "212693966816",
+      "address": "Riad Laarouss bin Lamkahi 224, Marrakech 40030",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Simple%20Restaurant%20marrakech&query=31.6339612%2C-7.9906629",
+      "directionsUrl": "https://www.google.com/maps/dir/?api=1&destination=31.6339612%2C-7.9906629",
+      "instagram": "https://www.instagram.com/simple.restaurant_/",
+      "reserveUrl": "https://forms.office.com/pages/responsepage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAAO__asigfFUOUszM05DMklSTE1XNTZXQkZaREFDUlhVNy4u&route=shorturl",
+      "happyHour": "15h–18h"
+    }
+  },
+  "nav": {
+    "home":    { "fr": "Accueil",  "en": "Home" },
+    "about":   { "fr": "Le lieu",  "en": "The Place" },
+    "menu":    { "fr": "La carte", "en": "Menu" },
+    "contact": { "fr": "Contact",  "en": "Contact" },
+    "reserve": { "fr": "Réserver", "en": "Reserve" }
+  },
+  "cta": {
+    "reserve":    { "fr": "Réserver une table", "en": "Reserve a table" },
+    "call":       { "fr": "Appeler",            "en": "Call us" },
+    "directions": { "fr": "Itinéraire",         "en": "Directions" },
+    "whatsapp":   { "fr": "WhatsApp",           "en": "WhatsApp" },
+    "seeMenu":    { "fr": "Voir la carte",      "en": "See the menu" },
+    "instagram":  { "fr": "Voir l'Instagram",   "en": "See our Instagram" }
+  },
+  "hero": {
+    "eyebrow":  { "fr": "Rooftop · Médina de Marrakech", "en": "Rooftop · Marrakech Medina" },
+    "title":    { "fr": "Simple. Sur les toits de la médina.", "en": "Simple. On the rooftops of the medina." },
+    "subtitle": { "fr": "Un rooftop lumineux au cœur de Riad Laarouss : tajines, msemen façon pizza, matcha et jus frais — au coucher du soleil sur Marrakech.", "en": "A sun-drenched rooftop in the heart of Riad Laarouss: tagines, msemen-style pizza, matcha and fresh juice — as the sun sets over Marrakech." },
+    "rating":   { "fr": "4,6 ★ · 1 528 avis Google", "en": "4.6 ★ · 1,528 Google reviews" }
+  },
+  "intro": {
+    "eyebrow": { "fr": "Le pitch", "en": "The idea" },
+    "title":   { "fr": "Classiques marocains, énergie d'aujourd'hui.", "en": "Moroccan classics, today's energy." },
+    "body":    { "fr": "Simple, c'est une table de rooftop dans la médina de Marrakech où l'on prend le temps. On y sert les grands classiques — tajine, mint tea, jus fraîchement pressé — aux côtés d'un coin café moderne : matcha, milkshakes, macchiato et notre fameux msemen façon pizza. Des tables jaunes, des zelliges verts, des guirlandes lumineuses et le ciel de Marrakech qui vire au corail. Rien de compliqué. Juste bon.", "en": "Simple is a rooftop table in the Marrakech medina where you take your time. We serve the great classics — tagine, mint tea, freshly pressed juice — alongside a modern coffee corner: matcha, milkshakes, macchiato and our famous msemen-style pizza. Yellow tables, green zellij, string lights and a Marrakech sky turning coral. Nothing complicated. Just good." }
+  },
+  "highlights": {
+    "eyebrow": { "fr": "Pourquoi Simple", "en": "Why Simple" },
+    "items": [
+      { "title": { "fr": "Le rooftop au coucher du soleil", "en": "Rooftop at sunset" }, "body": { "fr": "Une terrasse ouverte sur les toits de la médina, guirlandes et golden hour comprises.", "en": "An open terrace over the medina rooftops — string lights and golden hour included." } },
+      { "title": { "fr": "Tajine & café bar", "en": "Tagine & coffee bar" }, "body": { "fr": "Les classiques marocains d'un côté, matcha, milkshakes et macchiato de l'autre.", "en": "Moroccan classics on one side, matcha, milkshakes and macchiato on the other." } },
+      { "title": { "fr": "Happy Hour 15h–18h", "en": "Happy Hour 3–6pm" }, "body": { "fr": "Le moment parfait pour un jus frais ou un matcha entre deux visites de la médina.", "en": "The perfect window for a fresh juice or a matcha between medina walks." } },
+      { "title": { "fr": "En plein cœur de Riad Laarouss", "en": "Right in Riad Laarouss" }, "body": { "fr": "À quelques ruelles des souks, faciles à rejoindre à pied depuis la médina.", "en": "A few lanes from the souks, an easy walk from anywhere in the medina." } }
+    ]
+  },
+  "socialProof": {
+    "title":  { "fr": "Aimé par les voyageurs", "en": "Loved by travellers" },
+    "body":   { "fr": "4,6 sur 5 sur Google, sur plus de 1 500 avis, et 16 000 abonnés qui suivent la vie du rooftop sur Instagram.", "en": "4.6 out of 5 on Google across more than 1,500 reviews, and 16,000 followers watching rooftop life on Instagram." },
+    "note":   { "fr": "Note affichée : Google, juillet 2026.", "en": "Rating shown: Google, July 2026." }
+  },
+  "menuIntro": {
+    "eyebrow": { "fr": "La carte", "en": "The menu" },
+    "title":   { "fr": "Ce que l'on sert", "en": "What we serve" },
+    "body":    { "fr": "Un aperçu de la maison. La carte complète et les prix vous sont présentés sur place — dites-nous si vous avez une envie particulière, on s'adapte.", "en": "A taste of the house. The full menu and prices are shared in-house — tell us what you're craving and we'll sort you out." },
+    "placeholderNote": { "fr": "Sélection indicative — prix à confirmer sur place.", "en": "Indicative selection — prices confirmed in-house." }
+  },
+  "menu": {
+    "categories": [
+      {
+        "name": { "fr": "Tajines & classiques marocains", "en": "Tagines & Moroccan classics" },
+        "items": [
+          { "name": { "fr": "Tajine de légumes", "en": "Vegetable tagine" }, "desc": { "fr": "Légumes de saison mijotés, semoule et épices douces.", "en": "Slow-cooked seasonal vegetables, semolina and gentle spices." } },
+          { "name": { "fr": "Tajine du jour", "en": "Tagine of the day" }, "desc": { "fr": "Demandez la préparation du jour à votre serveur.", "en": "Ask your server for today's preparation." } }
+        ]
+      },
+      {
+        "name": { "fr": "Msemen & twist street-food", "en": "Msemen & street-food twist" },
+        "items": [
+          { "name": { "fr": "Msemen façon pizza", "en": "Msemen-style pizza" }, "desc": { "fr": "Notre signature : le msemen marocain revisité en pizza.", "en": "Our signature: Moroccan msemen reimagined as a pizza." } },
+          { "name": { "fr": "Msemen nature", "en": "Plain msemen" }, "desc": { "fr": "Le feuilleté marocain, chaud, à partager.", "en": "The warm Moroccan flatbread, made to share." } }
+        ]
+      },
+      {
+        "name": { "fr": "Matcha & bar à café", "en": "Matcha & coffee bar" },
+        "items": [
+          { "name": { "fr": "Matcha latte", "en": "Matcha latte" }, "desc": { "fr": "Glacé ou chaud.", "en": "Iced or hot." } },
+          { "name": { "fr": "Macchiato", "en": "Macchiato" }, "desc": { "fr": "", "en": "" } },
+          { "name": { "fr": "Café au lait", "en": "Café au lait" }, "desc": { "fr": "", "en": "" } }
+        ]
+      },
+      {
+        "name": { "fr": "Boissons fraîches & jus", "en": "Cold drinks & juices" },
+        "items": [
+          { "name": { "fr": "Jus fraîchement pressé", "en": "Freshly pressed juice" }, "desc": { "fr": "Orange et fruits de saison.", "en": "Orange and seasonal fruit." } },
+          { "name": { "fr": "Milkshake", "en": "Milkshake" }, "desc": { "fr": "", "en": "" } },
+          { "name": { "fr": "After Glow", "en": "After Glow" }, "desc": { "fr": "Notre boisson fraîche signature.", "en": "Our signature cooler." } },
+          { "name": { "fr": "Thé à la menthe", "en": "Mint tea" }, "desc": { "fr": "Le classique, servi bien sucré.", "en": "The classic, served nice and sweet." } }
+        ]
+      },
+      {
+        "name": { "fr": "Douceurs", "en": "Sweets" },
+        "items": [
+          { "name": { "fr": "Pâtisserie du jour", "en": "Pastry of the day" }, "desc": { "fr": "Selon l'humeur de la maison.", "en": "Depending on the kitchen's mood." } }
+        ]
+      }
+    ]
+  },
+  "aboutPage": {
+    "eyebrow": { "fr": "Le lieu", "en": "The place" },
+    "title":   { "fr": "Un rooftop, une médina, une bonne heure", "en": "A rooftop, a medina, a good hour" },
+    "lead":    { "fr": "Simple est né d'une idée toute simple : un bon endroit sur les toits, où les classiques marocains rencontrent l'énergie d'un café moderne.", "en": "Simple grew from a simple idea: a good spot on the rooftops, where Moroccan classics meet the energy of a modern café." },
+    "body1":   { "fr": "On est installés dans le quartier de Riad Laarouss, à quelques ruelles des souks. Montez l'escalier et la médina s'ouvre : terrasse ouverte, tables jaunes sur zelliges verts, guirlandes lumineuses et, quand le soleil descend, un ciel qui vire au corail au-dessus de Marrakech.", "en": "We sit in the Riad Laarouss quarter, a few lanes from the souks. Climb the stairs and the medina opens up: an open terrace, yellow tables on green zellij, string lights and — as the sun drops — a sky that turns coral over Marrakech." },
+    "body2":   { "fr": "La cuisine reste fidèle à son nom. Des tajines mijotés et du thé à la menthe, mais aussi du matcha, des milkshakes et notre msemen façon pizza. De quoi caler une pause déjeuner, un goûter au Happy Hour (15h–18h) ou un dîner tranquille à la lumière des guirlandes.", "en": "The kitchen stays true to its name. Slow-cooked tagines and mint tea, but also matcha, milkshakes and our msemen-style pizza. Enough for a lunch stop, a Happy Hour treat (3–6pm) or a quiet dinner under the string lights." },
+    "closing": { "fr": "Rien de compliqué. Juste une bonne table, en hauteur.", "en": "Nothing complicated. Just a good table, up high." }
+  },
+  "contactPage": {
+    "eyebrow": { "fr": "Contact", "en": "Contact" },
+    "title":   { "fr": "Venez nous voir", "en": "Come and see us" },
+    "lead":    { "fr": "Réservez votre table pour le coucher du soleil, ou passez simplement dire bonjour.", "en": "Book your table for sunset, or just drop by to say hello." },
+    "addressLabel": { "fr": "Adresse", "en": "Address" },
+    "address":      { "fr": "Riad Laarouss bin Lamkahi 224, Marrakech 40030", "en": "Riad Laarouss bin Lamkahi 224, Marrakech 40030" },
+    "phoneLabel":   { "fr": "Téléphone", "en": "Phone" },
+    "hoursLabel":   { "fr": "Horaires", "en": "Hours" },
+    "hours":        { "fr": "Happy Hour 15h–18h. Horaires complets à confirmer — appelez-nous pour être sûr.", "en": "Happy Hour 3–6pm. Full opening hours to be confirmed — give us a call to be sure." },
+    "reserveNote":  { "fr": "La réservation se fait via notre formulaire en ligne. Vous pouvez aussi nous appeler directement.", "en": "Reservations go through our online form. You can also just call us directly." }
+  },
+  "reserveBand": {
+    "title": { "fr": "Une table pour le coucher du soleil ?", "en": "A table for sunset?" },
+    "body":  { "fr": "Réservez en ligne en une minute, ou appelez-nous — on garde la meilleure place du rooftop.", "en": "Book online in a minute, or call us — we'll keep the best seat on the rooftop." }
+  },
+  "footer": {
+    "tagline":  { "fr": "Rooftop marocain dans la médina de Marrakech.", "en": "Moroccan rooftop in the Marrakech medina." },
+    "madeNote": { "fr": "Photos issues de notre Instagram — visuels haute définition et logo à venir.", "en": "Photos from our Instagram — high-res visuals and logo coming soon." },
+    "rights":   { "fr": "Tous droits réservés.", "en": "All rights reserved." }
+  },
+  "seo": {
+    "home": {
+      "title": { "fr": "Simple Restaurant — Rooftop dans la médina de Marrakech", "en": "Simple Restaurant — Rooftop in the Marrakech Medina" },
+      "desc":  { "fr": "Rooftop marocain au cœur de Marrakech : tajines, msemen façon pizza, matcha et jus frais au coucher du soleil. 4,6★ sur Google. Réservez votre table.", "en": "Moroccan rooftop in the heart of Marrakech: tagines, msemen-style pizza, matcha and fresh juice at sunset. 4.6★ on Google. Reserve your table." }
+    },
+    "about": {
+      "title": { "fr": "Le lieu — Simple Restaurant Marrakech", "en": "The Place — Simple Restaurant Marrakech" },
+      "desc":  { "fr": "Un rooftop lumineux dans le quartier de Riad Laarouss, où les classiques marocains rencontrent un café moderne.", "en": "A sun-drenched rooftop in the Riad Laarouss quarter, where Moroccan classics meet a modern café." }
+    },
+    "menu": {
+      "title": { "fr": "La carte — Simple Restaurant Marrakech", "en": "Menu — Simple Restaurant Marrakech" },
+      "desc":  { "fr": "Tajines, msemen façon pizza, matcha, milkshakes et jus frais. Un aperçu de la carte de notre rooftop dans la médina.", "en": "Tagines, msemen-style pizza, matcha, milkshakes and fresh juice. A taste of our rooftop menu in the medina." }
+    },
+    "contact": {
+      "title": { "fr": "Contact & réservation — Simple Restaurant Marrakech", "en": "Contact & Reservations — Simple Restaurant Marrakech" },
+      "desc":  { "fr": "Adresse, téléphone et réservation en ligne du rooftop Simple, Riad Laarouss, médina de Marrakech.", "en": "Address, phone and online reservations for Simple rooftop, Riad Laarouss, Marrakech medina." }
+    }
+  }
+}
