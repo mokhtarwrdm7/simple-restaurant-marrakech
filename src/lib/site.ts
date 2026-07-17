@@ -6,7 +6,7 @@
 export type Lang = "en" | "fr";
 export const LANGS: Lang[] = ["fr", "en"];
 
-export const SITE_URL = "https://simple-restaurant-site.vercel.app";
+export const SITE_URL = "https://simple-restaurant-site-ochre.vercel.app";
 
 // Verified channel — Google Maps listing.
 export const PHONE = "+212693966816";
