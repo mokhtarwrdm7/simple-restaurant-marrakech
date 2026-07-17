@@ -42,3 +42,15 @@ All-grotesque system — deliberately not a warm serif (anti-convergence vs prio
 IO-Reveal mechanism (visible-by-default + IntersectionObserver + 3s safety timer). Signature =
 "golden-hour lift": 22px rise + 0.965→1 scale pop, ease-out-expo `cubic-bezier(0.16,1,0.3,1)`,
 0.09s stagger. Gentle GSAP ScrollTrigger parallax on the hero only. Respects `prefers-reduced-motion`.
+
+## Composition
+- Image-led and asymmetric: the real rooftop photography carries each page opening, with type and conversion actions layered directly into the scene.
+- Use committed color fields rather than neutral cards: ink for atmosphere, yellow for food/menu energy, plaster for long-form reading, and sage for earned social proof.
+- Feature content is expressed as ruled lists, offset image pairings, and full-width bands. Avoid equal card grids, repeated numbered scaffolds, and pill clusters.
+- Display headings use a tight 0.90–1.02 line height and cap at 6rem. Body copy stays below 65–70 characters per line.
+
+## Components
+- Navigation is transparent over the home hero, then resolves to an opaque plaster bar after scrolling. Interior routes use the plaster bar immediately.
+- Primary actions use compact 0.8rem corners and a short upward hover response. Pills are reserved for controls where the shape communicates function.
+- Photography uses restrained 0.8–1rem corners, occasional overlap, and slow image-only hover zoom. Do not wrap images in generic white cards.
+- Footer uses the ink ground, an oversized wordmark, one dominant yellow reservation action, and a simplified navigation/contact row.

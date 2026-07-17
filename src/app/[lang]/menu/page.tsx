@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Cta } from "@/components/Cta";
 import { Img } from "@/components/Img";
 import { Reveal } from "@/components/Reveal";
-import { SectionHead } from "@/components/SectionHead";
 import { copy, t } from "@/lib/copy";
 import { PHONE, RESERVE_URL, type Lang } from "@/lib/site";
 
@@ -22,40 +21,35 @@ export default function Menu({ params }: { params: { lang: Lang } }) {
 
   return (
     <>
-      {/* Header */}
-      <section className="bg-plaster">
-        <div className="mx-auto max-w-shell px-5 pt-16 sm:px-8 md:pt-24">
-          <div className="grid items-end gap-8 md:grid-cols-[1.3fr_1fr]">
-            <SectionHead eyebrow={t(copy.menuIntro.eyebrow, lang)} title={t(copy.menuIntro.title, lang)} lede={t(copy.menuIntro.body, lang)} />
-            <Img src="/img/terrace-overhead.webp" alt={lang === "fr" ? "Tables dressées avec thé à la menthe" : "Tables set with mint tea"} ratio="16 / 10" className="rounded-xl2 shadow-lift" />
+      <section className="overflow-hidden bg-ink text-plaster">
+        <div className="mx-auto grid max-w-shell gap-12 px-5 py-16 sm:px-8 md:py-24 lg:grid-cols-[0.9fr_1.1fr] lg:items-center lg:gap-20">
+          <div>
+            <p className="text-sm font-semibold text-yellow">{t(copy.menuIntro.eyebrow, lang)}</p>
+            <h1 className="mt-5 font-display text-[clamp(3.6rem,7vw,6rem)] font-extrabold leading-[0.88] tracking-[-0.04em] text-plaster">{t(copy.menuIntro.title, lang)}</h1>
+            <p className="mt-7 max-w-xl text-base leading-relaxed text-plaster/72 sm:text-lg">{t(copy.menuIntro.body, lang)}</p>
+            <p className="mt-8 border-t border-plaster/25 pt-5 text-sm font-semibold text-yellow-soft">{t(copy.menuIntro.placeholderNote, lang)}</p>
           </div>
-          {/* Honesty note — no invented prices */}
-          <p className="mt-8 inline-flex rounded-full border border-sand bg-plaster-soft px-4 py-2 font-body text-sm font-semibold text-ink-soft">
-            {t(copy.menuIntro.placeholderNote, lang)}
-          </p>
+          <Img src="/img/terrace-overhead.webp" alt={lang === "fr" ? "Tables dressées avec thé à la menthe" : "Tables set with mint tea"} ratio="4 / 5" className="image-zoom rounded-[1rem] shadow-lift" position="center 50%" />
         </div>
       </section>
 
-      {/* Categories */}
       <section className="bg-plaster">
-        <div className="mx-auto max-w-shell px-5 py-16 sm:px-8 md:py-20">
-          <div className="grid gap-x-14 gap-y-14 md:grid-cols-2">
-            {cats.map((cat, i) => (
-              <Reveal key={i}>
-                <div data-reveal className="flex items-baseline gap-3 border-b-2 border-yellow pb-3">
-                  <span className="font-mono text-sm font-bold text-coral">{String(i + 1).padStart(2, "0")}</span>
-                  <h2 className="font-display text-2xl font-bold text-ink">{t(cat.name, lang)}</h2>
+        <div className="mx-auto max-w-shell px-5 py-20 sm:px-8 md:py-28">
+          <div className="grid gap-x-16 gap-y-16 lg:grid-cols-2 lg:gap-y-24">
+            {cats.map((cat, index) => (
+              <Reveal key={index} className={index % 2 ? "lg:translate-y-14" : ""}>
+                <div data-reveal className="flex items-center gap-4 border-b border-ink/25 pb-4">
+                  <span className="h-3 w-3 rotate-45 bg-yellow" aria-hidden />
+                  <h2 className="font-display text-2xl font-extrabold leading-tight text-ink sm:text-3xl">{t(cat.name, lang)}</h2>
                 </div>
-                <ul className="mt-5 flex flex-col gap-5">
-                  {cat.items.map((item, j) => (
-                    <li key={j} data-reveal className="flex flex-col">
-                      <div className="flex items-baseline justify-between gap-3">
-                        <span className="font-display text-lg font-bold text-ink">{t(item.name, lang)}</span>
-                        <span className="h-px flex-1 translate-y-[-2px] border-b border-dotted border-sand" />
+                <ul className="mt-2">
+                  {cat.items.map((item, itemIndex) => (
+                    <li key={itemIndex} data-reveal className="border-b border-sand py-5">
+                      <div className="flex items-baseline gap-3">
+                        <span className="font-display text-lg font-bold text-ink sm:text-xl">{t(item.name, lang)}</span>
+                        <span className="h-px flex-1 border-b border-dotted border-rattan" />
                       </div>
-                      {t(item.desc, lang) && (
-                        <span className="mt-1 text-sm leading-relaxed text-ink-soft">{t(item.desc, lang)}</span>
-                      )}
+                      {t(item.desc, lang) && <span className="mt-2 block max-w-xl text-sm leading-relaxed text-ink-soft">{t(item.desc, lang)}</span>}
                     </li>
                   ))}
                 </ul>
@@ -65,16 +59,15 @@ export default function Menu({ params }: { params: { lang: Lang } }) {
         </div>
       </section>
 
-      {/* Reserve CTA band */}
-      <section className="bg-clay text-plaster">
-        <div className="mx-auto flex max-w-shell flex-col items-start gap-6 px-5 py-16 sm:px-8 md:flex-row md:items-center md:justify-between">
-          <div className="max-w-xl">
-            <h2 className="font-display text-3xl font-extrabold text-plaster sm:text-4xl">{t(copy.reserveBand.title, lang)}</h2>
-            <p className="mt-3 text-base leading-relaxed text-plaster/80">{t(copy.reserveBand.body, lang)}</p>
+      <section className="bg-yellow text-ink">
+        <div className="mx-auto grid max-w-shell gap-8 px-5 py-16 sm:px-8 md:grid-cols-[1fr_auto] md:items-end md:py-20">
+          <div className="max-w-3xl">
+            <h2 className="font-display text-[clamp(2.8rem,5vw,4.8rem)] font-extrabold leading-[0.94] tracking-[-0.035em]">{t(copy.reserveBand.title, lang)}</h2>
+            <p className="mt-4 max-w-xl text-base leading-relaxed text-ink/70">{t(copy.reserveBand.body, lang)}</p>
           </div>
-          <div className="flex flex-wrap gap-3">
-            <Cta href={RESERVE_URL} variant="primary" size="lg" external>{t(c.reserve, lang)}</Cta>
-            <Cta href={`tel:${PHONE}`} variant="ghostDark" size="lg">{t(c.call, lang)}</Cta>
+          <div className="flex flex-wrap gap-3 md:justify-end">
+            <Cta href={RESERVE_URL} variant="ink" size="lg" external>{t(c.reserve, lang)}</Cta>
+            <Cta href={`tel:${PHONE}`} variant="outline" size="lg">{t(c.call, lang)}</Cta>
           </div>
         </div>
       </section>

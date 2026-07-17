@@ -52,7 +52,7 @@ export function ParallaxImage({
   );
 
   return (
-    <div ref={scope} className={`relative overflow-hidden ${className}`}>
+    <div ref={scope} className={`overflow-hidden ${className}`}>
       <Img
         src={src}
         alt={alt}

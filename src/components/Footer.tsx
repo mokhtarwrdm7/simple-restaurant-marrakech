@@ -18,55 +18,48 @@ const NAV = [
   { key: "contact", path: "/contact" },
 ] as const;
 
-// Clay-terracotta footer (a medina-wall dark band) — closes the page on the
-// brand's deepest ground, echoing the reservation band rather than the donor's.
 export function Footer({ lang }: { lang: Lang }) {
   const nav = copy.nav as Record<string, { fr: string; en: string }>;
   const c = copy.cta as Record<string, { fr: string; en: string }>;
   const year = new Date().getFullYear();
 
   return (
-    <footer className="bg-clay text-plaster/90">
-      <div className="mx-auto grid max-w-shell gap-10 px-5 py-14 sm:px-8 md:grid-cols-[1.4fr_1fr_1fr]">
-        <div>
-          <Wordmark className="text-3xl" tone="plaster" />
-          <p className="mt-4 max-w-xs text-sm leading-relaxed text-plaster/75">
-            {t(copy.footer.tagline, lang)}
-          </p>
+    <footer className="bg-ink text-plaster/90">
+      <div className="mx-auto max-w-shell px-5 pb-10 pt-16 sm:px-8 md:pb-14 md:pt-20">
+        <div className="grid gap-10 border-b border-plaster/15 pb-12 md:grid-cols-[1.5fr_0.8fr] md:items-end">
+          <div>
+            <Wordmark className="text-[clamp(3.5rem,9vw,7rem)]" tone="plaster" />
+            <p className="mt-5 max-w-lg text-base leading-relaxed text-plaster/70 sm:text-lg">
+              {t(copy.footer.tagline, lang)}
+            </p>
+          </div>
           <a
             href={RESERVE_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-6 inline-flex rounded-full bg-yellow px-6 py-3 font-body text-sm font-bold text-ink transition-transform hover:-translate-y-0.5"
+            className="inline-flex min-h-16 items-center justify-between rounded-[0.9rem] bg-yellow px-6 font-body font-bold text-ink transition-all duration-300 hover:-translate-y-1 hover:bg-yellow-soft md:min-h-20 md:px-8"
           >
-            {t(c.reserve, lang)}
+            {t(c.reserve, lang)} <span aria-hidden className="text-2xl">↗</span>
           </a>
         </div>
 
-        <nav aria-label="Footer" className="flex flex-col gap-2.5">
-          <p className="mb-1 font-body text-xs font-bold uppercase tracking-eyebrow text-yellow-soft">
-            {lang === "fr" ? "Navigation" : "Explore"}
-          </p>
-          {NAV.map(({ key, path }) => (
-            <a key={key} href={localePath(lang, path)} className="w-fit text-sm text-plaster/80 transition-colors hover:text-plaster">
-              {t(nav[key], lang)}
+        <div className="grid gap-10 pt-10 md:grid-cols-[1fr_1.25fr]">
+          <nav aria-label="Footer" className="flex flex-wrap content-start gap-x-6 gap-y-3">
+            {NAV.map(({ key, path }) => (
+              <a key={key} href={localePath(lang, path)} className="text-sm font-semibold text-plaster/75 transition-colors hover:text-yellow">
+                {t(nav[key], lang)}
+              </a>
+            ))}
+          </nav>
+          <div className="flex flex-col gap-2 md:items-end md:text-right">
+            <a href={MAPS_DIRECTIONS} target="_blank" rel="noopener noreferrer" className="max-w-md text-sm leading-relaxed text-plaster/75 transition-colors hover:text-plaster">
+              {ADDRESS}
             </a>
-          ))}
-        </nav>
-
-        <div className="flex flex-col gap-2.5">
-          <p className="mb-1 font-body text-xs font-bold uppercase tracking-eyebrow text-yellow-soft">
-            {lang === "fr" ? "Nous trouver" : "Find us"}
-          </p>
-          <a href={MAPS_DIRECTIONS} target="_blank" rel="noopener noreferrer" className="text-sm leading-relaxed text-plaster/80 transition-colors hover:text-plaster">
-            {ADDRESS}
-          </a>
-          <a href={`tel:${PHONE}`} className="text-sm text-plaster/80 transition-colors hover:text-plaster">
-            {PHONE_DISPLAY}
-          </a>
-          <a href={INSTAGRAM} target="_blank" rel="noopener noreferrer" className="w-fit text-sm text-plaster/80 transition-colors hover:text-plaster">
-            Instagram @simple.restaurant_
-          </a>
+            <div className="flex flex-wrap gap-x-5 gap-y-2 md:justify-end">
+              <a href={`tel:${PHONE}`} className="text-sm text-plaster/75 transition-colors hover:text-yellow">{PHONE_DISPLAY}</a>
+              <a href={INSTAGRAM} target="_blank" rel="noopener noreferrer" className="text-sm text-plaster/75 transition-colors hover:text-yellow">@simple.restaurant_</a>
+            </div>
+          </div>
         </div>
       </div>
 

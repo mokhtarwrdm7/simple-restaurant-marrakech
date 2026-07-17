@@ -45,7 +45,7 @@ const config: Config = {
         mono: ["var(--font-mono)", "ui-monospace", "monospace"],
       },
       maxWidth: {
-        shell: "1180px",
+        shell: "1240px",
       },
       boxShadow: {
         lift: "0 18px 40px -22px rgba(60, 34, 12, 0.35)",

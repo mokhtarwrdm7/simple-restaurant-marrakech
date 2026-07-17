@@ -24,16 +24,16 @@ export function SectionHead({
     <div className={`flex flex-col ${alignCls} ${className}`}>
       {eyebrow && (
         <span
-          className={`mb-4 inline-flex items-center gap-2.5 font-body text-xs font-bold uppercase tracking-eyebrow ${
-            isPlaster ? "text-yellow-soft" : "text-clay"
+          className={`mb-5 inline-flex items-center gap-2.5 font-body text-sm font-semibold ${
+            isPlaster ? "text-yellow-soft" : "text-clay-deep"
           }`}
         >
-          <span className="h-px w-6 bg-yellow" />
+          <span className="h-2 w-2 rotate-45 bg-yellow" />
           {eyebrow}
         </span>
       )}
       <h2
-        className={`font-display text-3xl font-extrabold leading-[1.04] sm:text-4xl md:text-[2.75rem] ${
+        className={`max-w-3xl text-balance font-display text-[clamp(2.25rem,5vw,4.5rem)] font-extrabold leading-[0.98] tracking-[-0.035em] ${
           isPlaster ? "text-plaster" : "text-ink"
         }`}
       >
