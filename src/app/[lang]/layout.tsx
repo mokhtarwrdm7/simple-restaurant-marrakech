@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Bricolage_Grotesque, Hanken_Grotesk, Space_Mono } from "next/font/google";
+import { Bricolage_Grotesque, Hanken_Grotesk } from "next/font/google";
 import "../globals.css";
 import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
@@ -9,20 +9,15 @@ import { LANGS, SITE_URL, type Lang } from "@/lib/site";
 
 const display = Bricolage_Grotesque({
   subsets: ["latin"],
-  weight: ["600", "700", "800"],
+  weight: ["500", "600"],
   variable: "--font-display",
   display: "swap",
 });
+
 const body = Hanken_Grotesk({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+  weight: ["400", "500", "600"],
   variable: "--font-body",
-  display: "swap",
-});
-const mono = Space_Mono({
-  subsets: ["latin"],
-  weight: ["400", "700"],
-  variable: "--font-mono",
   display: "swap",
 });
 
@@ -63,16 +58,16 @@ export default function LangLayout({
 }) {
   const lang: Lang = params.lang === "en" ? "en" : "fr";
   return (
-    <html lang={lang} className={`${display.variable} ${body.variable} ${mono.variable}`}>
-      <body className="bg-plaster font-body text-ink antialiased">
+    <html lang={lang} className={`${display.variable} ${body.variable}`}>
+      <body className="bg-simple-day font-body text-simple-night antialiased">
         <a
           href="#main"
-          className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[60] focus:rounded-full focus:bg-yellow focus:px-4 focus:py-2 focus:font-bold focus:text-ink"
+          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[60] focus:bg-simple-sun focus:px-4 focus:py-2 focus:font-semibold focus:text-simple-night"
         >
           {lang === "fr" ? "Aller au contenu" : "Skip to content"}
         </a>
         <Nav lang={lang} />
-        <main id="main" className="pb-20 md:pb-0">
+        <main id="main" className="pb-16 md:pb-0">
           {children}
         </main>
         <Footer lang={lang} />

@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import { Cta } from "@/components/Cta";
+import { displayCopy } from "@/components/DisplayCopy";
 import { Img } from "@/components/Img";
-import { Reveal } from "@/components/Reveal";
+import { ReservationClose } from "@/components/ReservationClose";
 import { copy, t } from "@/lib/copy";
-import { PHONE, RESERVE_URL, type Lang } from "@/lib/site";
+import { RESERVE_URL, type Lang } from "@/lib/site";
 
 export function generateMetadata({ params }: { params: { lang: Lang } }): Metadata {
   const lang = params.lang === "en" ? "en" : "fr";
@@ -21,56 +22,61 @@ export default function Menu({ params }: { params: { lang: Lang } }) {
 
   return (
     <>
-      <section className="overflow-hidden bg-ink text-plaster">
-        <div className="mx-auto grid max-w-shell gap-12 px-5 py-16 sm:px-8 md:py-24 lg:grid-cols-[0.9fr_1.1fr] lg:items-center lg:gap-20">
-          <div>
-            <p className="text-sm font-semibold text-yellow">{t(copy.menuIntro.eyebrow, lang)}</p>
-            <h1 className="mt-5 font-display text-[clamp(3.6rem,7vw,6rem)] font-extrabold leading-[0.88] tracking-[-0.04em] text-plaster">{t(copy.menuIntro.title, lang)}</h1>
-            <p className="mt-7 max-w-xl text-base leading-relaxed text-plaster/72 sm:text-lg">{t(copy.menuIntro.body, lang)}</p>
-            <p className="mt-8 border-t border-plaster/25 pt-5 text-sm font-semibold text-yellow-soft">{t(copy.menuIntro.placeholderNote, lang)}</p>
+      <section className="relative flex min-h-[78dvh] items-end overflow-hidden bg-simple-night text-simple-day">
+        <Img src="/img/terrace-overhead.webp" alt={lang === "fr" ? "Table dressée avec thé à la menthe" : "Table set with mint tea"} fill priority className="absolute inset-0" position="center 50%" />
+        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(36,26,18,0.08)_8%,rgba(36,26,18,0.9)_100%)]" />
+        <div className="relative mx-auto w-full max-w-shell px-5 py-12 sm:px-8 md:py-16">
+          <div className="max-w-4xl">
+            <p className="mb-5 text-sm font-medium text-simple-sun-soft">{displayCopy(copy.menuIntro.eyebrow, lang)}</p>
+            <h1 className="font-display text-[clamp(3.4rem,7vw,5.9rem)] font-medium leading-[0.92] tracking-[-0.035em] text-simple-day">{displayCopy(copy.menuIntro.title, lang)}</h1>
+            <p className="mt-6 max-w-2xl text-base leading-7 text-simple-day/84 sm:text-lg sm:leading-8">{displayCopy(copy.menuIntro.body, lang)}</p>
+            <div className="mt-8"><Cta href={RESERVE_URL} variant="sun" size="lg" external>{displayCopy(c.reserve, lang)}</Cta></div>
           </div>
-          <Img src="/img/terrace-overhead.webp" alt={lang === "fr" ? "Tables dressées avec thé à la menthe" : "Tables set with mint tea"} ratio="4 / 5" className="image-zoom rounded-[1rem] shadow-lift" position="center 50%" />
         </div>
       </section>
 
-      <section className="bg-plaster">
-        <div className="mx-auto max-w-shell px-5 py-20 sm:px-8 md:py-28">
-          <div className="grid gap-x-16 gap-y-16 lg:grid-cols-2 lg:gap-y-24">
+      <div className="bg-simple-day">
+        <section className="mx-auto max-w-shell px-5 py-20 sm:px-8 md:py-28 lg:py-36">
+          <div className="mb-14 grid gap-6 border-t border-simple-day-line pt-8 md:grid-cols-[0.7fr_1.3fr] md:gap-16">
+            <p className="text-sm font-medium text-simple-coral-deep">Simple Restaurant · Marrakech</p>
+            <h2 className="max-w-3xl font-display text-[clamp(2.4rem,5vw,4.65rem)] font-medium leading-[0.96] tracking-[-0.03em] text-simple-night">
+              {lang === "fr" ? "Du tajine au matcha, sans complication." : "From tagine to matcha, without the fuss."}
+            </h2>
+          </div>
+
+          <div className="grid gap-x-20 gap-y-14 lg:grid-cols-2 lg:gap-y-20">
             {cats.map((cat, index) => (
-              <Reveal key={index} className={index % 2 ? "lg:translate-y-14" : ""}>
-                <div data-reveal className="flex items-center gap-4 border-b border-ink/25 pb-4">
-                  <span className="h-3 w-3 rotate-45 bg-yellow" aria-hidden />
-                  <h2 className="font-display text-2xl font-extrabold leading-tight text-ink sm:text-3xl">{t(cat.name, lang)}</h2>
-                </div>
-                <ul className="mt-2">
+              <section key={index} className={index % 2 ? "lg:mt-16" : ""}>
+                <h2 className="border-b border-simple-night/35 pb-4 font-display text-2xl font-medium leading-tight text-simple-night sm:text-3xl">{displayCopy(cat.name, lang)}</h2>
+                <ul>
                   {cat.items.map((item, itemIndex) => (
-                    <li key={itemIndex} data-reveal className="border-b border-sand py-5">
-                      <div className="flex items-baseline gap-3">
-                        <span className="font-display text-lg font-bold text-ink sm:text-xl">{t(item.name, lang)}</span>
-                        <span className="h-px flex-1 border-b border-dotted border-rattan" />
-                      </div>
-                      {t(item.desc, lang) && <span className="mt-2 block max-w-xl text-sm leading-relaxed text-ink-soft">{t(item.desc, lang)}</span>}
+                    <li key={itemIndex} className="border-b border-simple-day-line py-5">
+                      <h3 className="font-display text-lg font-medium text-simple-night sm:text-xl">{displayCopy(item.name, lang)}</h3>
+                      {displayCopy(item.desc, lang) && <p className="mt-2 max-w-xl text-sm leading-6 text-simple-night-muted">{displayCopy(item.desc, lang)}</p>}
                     </li>
                   ))}
                 </ul>
-              </Reveal>
+              </section>
             ))}
           </div>
-        </div>
-      </section>
+        </section>
 
-      <section className="bg-yellow text-ink">
-        <div className="mx-auto grid max-w-shell gap-8 px-5 py-16 sm:px-8 md:grid-cols-[1fr_auto] md:items-end md:py-20">
-          <div className="max-w-3xl">
-            <h2 className="font-display text-[clamp(2.8rem,5vw,4.8rem)] font-extrabold leading-[0.94] tracking-[-0.035em]">{t(copy.reserveBand.title, lang)}</h2>
-            <p className="mt-4 max-w-xl text-base leading-relaxed text-ink/70">{t(copy.reserveBand.body, lang)}</p>
+        <section className="mx-auto max-w-[1480px] px-5 pb-20 sm:px-8 md:pb-28">
+          <div className="grid gap-6 md:grid-cols-[1.35fr_0.65fr] md:items-end">
+            <Img src="/img/food-tagine.webp" alt={lang === "fr" ? "Tajine de légumes servi chez Simple" : "Vegetable tagine served at Simple"} ratio="16 / 10" className="photo-quiet" position="center 58%" />
+            <Img src="/img/food-dessert.webp" alt={lang === "fr" ? "Douceur de la maison" : "House sweet"} ratio="4 / 5" className="photo-quiet w-[72%] md:w-full" />
           </div>
-          <div className="flex flex-wrap gap-3 md:justify-end">
-            <Cta href={RESERVE_URL} variant="ink" size="lg" external>{t(c.reserve, lang)}</Cta>
-            <Cta href={`tel:${PHONE}`} variant="outline" size="lg">{t(c.call, lang)}</Cta>
-          </div>
+        </section>
+      </div>
+
+      <aside className="bg-simple-sun text-simple-night">
+        <div className="mx-auto flex max-w-shell flex-col gap-2 px-5 py-4 text-sm font-medium sm:flex-row sm:items-center sm:justify-between sm:px-8">
+          <p>{displayCopy(copy.menuIntro.placeholderNote, lang)}</p>
+          <p>{lang === "fr" ? "Happy Hour de 15h à 18h" : "Happy Hour from 3 to 6pm"}</p>
         </div>
-      </section>
+      </aside>
+
+      <ReservationClose lang={lang} />
     </>
   );
 }

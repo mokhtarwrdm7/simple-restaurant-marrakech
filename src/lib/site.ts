@@ -30,7 +30,7 @@ export const RESERVE_URL =
   "https://forms.office.com/pages/responsepage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAAO__asigfFUOUszM05DMklSTE1XNTZXQkZaREFDUlhVNy4u&route=shorturl";
 
 // Confirmed from the house's own promo graphic.
-export const HAPPY_HOUR = "15h–18h";
+export const HAPPY_HOUR = "15h-18h";
 
 // Real, earned reputation (surfaced, never invented). Google Maps, 2026-07-17.
 export const RATING = { score: "4.6", scoreFr: "4,6", count: 1528, countFr: "1 528" };

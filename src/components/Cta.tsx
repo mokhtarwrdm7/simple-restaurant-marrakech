@@ -1,35 +1,26 @@
 import type { ReactNode } from "react";
 
-// Conversion buttons. Primary = signature marigold (the strongest action:
-// Reserve / Call). Coral = warm secondary. Outline/ghost for tertiary.
-// All are real anchors to real channels — a tap away on every page.
-type Variant = "primary" | "ink" | "coral" | "outline" | "ghostDark";
+type Variant = "sun" | "night" | "outline" | "light";
 
 const base =
-  "inline-flex items-center justify-center gap-2 rounded-[0.8rem] font-body font-bold transition-all duration-300 ease-spring focus-visible:outline-none active:translate-y-px whitespace-nowrap";
+  "inline-flex items-center justify-center whitespace-nowrap border font-body font-semibold transition-colors duration-300 ease-sunline focus-visible:outline-none";
 
 const sizes = {
-  md: "px-5 py-2.5 text-[0.95rem]",
-  lg: "px-7 py-3.5 text-base",
+  md: "min-h-11 px-5 py-2.5 text-[0.95rem]",
+  lg: "min-h-12 px-6 py-3 text-base",
 };
 
 const variants: Record<Variant, string> = {
-  primary:
-    "bg-yellow text-ink shadow-yellow hover:-translate-y-1 hover:bg-yellow-soft",
-  ink:
-    "bg-ink text-plaster shadow-lift hover:-translate-y-1 hover:bg-clay-deep",
-  coral:
-    "bg-coral text-plaster-soft hover:bg-coral-deep hover:-translate-y-1 shadow-card",
-  outline:
-    "border-[1.5px] border-ink/25 text-ink hover:border-ink/60 hover:bg-ink/[0.04]",
-  ghostDark:
-    "border-[1.5px] border-plaster/35 text-plaster hover:bg-plaster/10",
+  sun: "border-simple-sun bg-simple-sun text-simple-night hover:border-simple-sun-deep hover:bg-simple-sun-deep",
+  night: "border-simple-night bg-simple-night text-simple-day hover:bg-simple-night-soft",
+  outline: "border-simple-night/35 text-simple-night hover:border-simple-night hover:bg-simple-day-bright",
+  light: "border-simple-day/55 text-simple-day hover:border-simple-day hover:bg-simple-day/10",
 };
 
 export function Cta({
   href,
   children,
-  variant = "primary",
+  variant = "sun",
   size = "md",
   external = false,
   className = "",
@@ -43,13 +34,11 @@ export function Cta({
   className?: string;
   ariaLabel?: string;
 }) {
-  const rel = external ? "noopener noreferrer" : undefined;
-  const target = external ? "_blank" : undefined;
   return (
     <a
       href={href}
-      target={target}
-      rel={rel}
+      target={external ? "_blank" : undefined}
+      rel={external ? "noopener noreferrer" : undefined}
       aria-label={ariaLabel}
       className={`${base} ${sizes[size]} ${variants[variant]} ${className}`}
     >

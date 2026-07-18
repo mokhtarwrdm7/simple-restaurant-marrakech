@@ -1,19 +1,18 @@
-// Wordmark: "SIMPLE" set in the grotesque display, tight, with the signature
-// marigold dot. Placeholder mark until the client supplies a vector logo.
 export function Wordmark({
   className = "",
-  tone = "ink",
+  tone = "night",
 }: {
   className?: string;
-  tone?: "ink" | "plaster";
+  tone?: "night" | "day";
 }) {
-  const color = tone === "plaster" ? "text-plaster" : "text-ink";
   return (
     <span
-      className={`font-display font-extrabold uppercase leading-none tracking-[-0.03em] ${color} ${className}`}
+      className={`font-display font-semibold uppercase leading-none tracking-[-0.02em] ${
+        tone === "day" ? "text-simple-day" : "text-simple-night"
+      } ${className}`}
       aria-label="Simple Restaurant"
     >
-      Simple<span className="text-yellow">.</span>
+      Simple<span className="text-simple-sun">.</span>
     </span>
   );
 }

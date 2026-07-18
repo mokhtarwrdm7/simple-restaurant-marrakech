@@ -1,56 +1,84 @@
-# DESIGN.md — Simple Restaurant, Marrakech
+# DESIGN.md: Simple Restaurant, Marrakech
 
-Design-system reference for the build. The palette is drawn from Simple's own captured photos
-(Instagram @simple.restaurant_) — a sun-drenched Marrakech rooftop. See `../brand/BRAND.md` for the
-full Brand DNA. Every literal colour below is an **intentional** design-system token (Tailwind
-`tailwind.config.ts`), not drift.
+Design reference for the premium rooftop redesign. The site keeps the approved all-grotesque identity and real photography, while moving away from the warm hospitality template used by earlier restaurant builds.
 
-## Colour palette
+## Design read and dials
+
+Reading this as a four-page restaurant redesign for mobile-first Marrakech diners, with a calm contemporary rooftop language led by daylight, real photographs, thin rules, and restrained marigold.
+
+- `DESIGN_VARIANCE: 7`
+- `MOTION_INTENSITY: 5`
+- `VISUAL_DENSITY: 3`
+- Mode: visual overhaul with strict preservation of routes, bilingual copy source, SEO, contact facts, imagery, and conversion links.
+
+## Colour system
+
+The audit refined the main canvas from warm plaster to near-zero-chroma daylight stone. This creates stronger separation from prior Morocco hospitality builds and lets the venue's real yellow tables carry the brand.
 
 | Token | Hex | Role |
-|-------|-----|------|
-| plaster | `#F5E9D6` | page canvas — sun-washed medina plaster |
-| plaster.deep | `#EFDFC6` | deeper plaster band |
-| plaster.soft | `#FBF4E7` | near-white warm panel |
-| ink | `#241A12` | primary text (warm near-black-brown) |
-| ink.soft | `#4A3B2E` | muted body text |
-| ink.faint | `#7A6A58` | captions / meta |
-| yellow | `#EDB01E` | SIGNATURE — the yellow terrace tables; primary CTA |
-| yellow.deep | `#D89A0C` | hover / focus ring |
-| yellow.soft | `#F7CE63` | highlight swash / eyebrow on dark |
-| coral | `#E0603C` | sunset accent / index numerals |
-| coral.deep | `#C64C2C` | coral hover |
-| clay | `#9E4326` | medina-wall dark bands (reserve band, footer) |
-| clay.deep | `#7E3319` | hero scrim, clay hover |
-| sage | `#6F7E52` | zellij / mint-tea fresh accent |
-| sage.deep | `#586843` | sage hover |
-| rattan | `#CBB187` | natural furniture / borders |
-| sand | `#E4D6BE` | hairlines / dividers |
+|---|---:|---|
+| `simple-day` | `#F2F2EE` | continuous neutral editorial field |
+| `simple-day-bright` | `#FAFAF7` | quiet inset surface and map ground |
+| `simple-day-tint` | `#F5E9D6` | legacy plaster, minor tint only |
+| `simple-day-line` | `#D7D6CF` | rules and dividers |
+| `simple-night` | `#241A12` | primary text and dark close |
+| `simple-night-soft` | `#4A4038` | dark hover tone |
+| `simple-night-muted` | `#655F58` | body copy on daylight stone |
+| `simple-sun` | `#EDB01E` | committed accent and one interruption |
+| `simple-sun-deep` | `#C98500` | hover and focus support |
+| `simple-coral` | `#E0603C` | sparse textual accent |
+| `simple-zellij` | `#6F7E52` | reserved supporting brand reference |
 
-Inline-style literals used in the standalone `global-error.tsx` safety page (which cannot rely on
-Tailwind classes): `#F5E9D6`, `#241A12`, `#9E4326`, `#EDB01E`, `#D89A0C`, plus ink tints
-`rgba(36,26,18,0.25)` and `rgba(36,26,18,0.04)`. All derive from the tokens above.
-`globals.css` uses `#241a12`, `#edb01e`, `#d89a0c`, `#f7ce63` (selection, focus ring, highlight swash).
+Marigold is not a page canvas. It appears in the reservation action, the compressed factual interruption, the wordmark point, and small active states.
 
-## Type
-- Display / headings: **Bricolage Grotesque** (600/700/800), tight tracking.
-- Body / UI: **Hanken Grotesk** (400–700).
-- Numerals / labels: **Space Mono** (index numbers, small labels).
-All-grotesque system — deliberately not a warm serif (anti-convergence vs prior riad clients).
+## Typography
+
+- Display: Bricolage Grotesque at weights 500 and 600 only.
+- Body and interface: Hanken Grotesk at weights 400, 500, and 600.
+- Space Mono was removed.
+- Display headlines cap below 6rem, use a minimum tracking of `-0.035em`, and remain sentence case.
+- Body copy stays within 68 characters where practical.
+
+## Three-act rhythm
+
+1. Immersive real-photo hero with lower-left content and a primary reservation action above the fold.
+2. One continuous `simple-day` editorial field with asymmetric photo pairings, thin ruled lists, loose gallery spacing, and no card grids.
+3. A restrained marigold interruption followed by a dark photographic reservation close and matching footer.
+
+The marigold strip is intentionally narrow and factual. It is not a metric rail or a large promotional block.
+
+## Photography
+
+- Use only curated images already stored in `public/img`.
+- Prefer one decisive image to several small images.
+- Photos are sharp or effectively square-cornered, with no floating badges and no generic image cards.
+- Home carries the loosest gallery composition. Interior routes use fewer, larger images.
+- The reservation close uses a darkened real photograph with one readability gradient.
 
 ## Motion
-IO-Reveal mechanism (visible-by-default + IntersectionObserver + 3s safety timer). Signature =
-"golden-hour lift": 22px rise + 0.965→1 scale pop, ease-out-expo `cubic-bezier(0.16,1,0.3,1)`,
-0.09s stagger. Gentle GSAP ScrollTrigger parallax on the hero only. Respects `prefers-reduced-motion`.
 
-## Composition
-- Image-led and asymmetric: the real rooftop photography carries each page opening, with type and conversion actions layered directly into the scene.
-- Use committed color fields rather than neutral cards: ink for atmosphere, yellow for food/menu energy, plaster for long-form reading, and sage for earned social proof.
-- Feature content is expressed as ruled lists, offset image pairings, and full-width bands. Avoid equal card grids, repeated numbered scaffolds, and pill clusters.
-- Display headings use a tight 0.90–1.02 line height and cap at 6rem. Body copy stays below 65–70 characters per line.
+- Hero parallax and universal vertical or scale reveals are removed.
+- Text is static.
+- The only orchestrated motion is `SunlineImage`, a left-to-right clip reveal on one panoramic Home photograph.
+- The effect uses GSAP, ScrollTrigger, and scoped `useGSAP` cleanup.
+- It is skipped entirely for `prefers-reduced-motion`.
+- Content and photography are visible by default without JavaScript.
 
-## Components
-- Navigation is transparent over the home hero, then resolves to an opaque plaster bar after scrolling. Interior routes use the plaster bar immediately.
-- Primary actions use compact 0.8rem corners and a short upward hover response. Pills are reserved for controls where the shape communicates function.
-- Photography uses restrained 0.8–1rem corners, occasional overlap, and slow image-only hover zoom. Do not wrap images in generic white cards.
-- Footer uses the ink ground, an oversized wordmark, one dominant yellow reservation action, and a simplified navigation/contact row.
+## Shared components
+
+- `Nav`: solid daylight-stone bar, one line, 72px tall, no scroll listener.
+- `Cta`: sharp, bordered, medium-weight actions with consistent labels per intent.
+- `MobileActionBar`: text only, with Call, Reserve, and Directions.
+- `SectionHead`: vertical hierarchy without repeated tracked uppercase eyebrows.
+- `ReservationClose`: shared dark photographic conversion close.
+- `SunlineImage`: the sole motion signature.
+- `DisplayCopy`: presentation-only punctuation cleanup so visible copy contains no em or en dashes while the bilingual source remains unchanged.
+
+## Accessibility and responsive rules
+
+- WCAG AA contrast is maintained on stone, marigold, and photographic grounds.
+- Focus states use a 3px deep-marigold outline with offset.
+- Navigation stays on one line at desktop and remains at or below 80px.
+- Full-height heroes use `min-h-[100dvh]` where applicable.
+- Mobile retains a persistent text-only conversion bar and safe-area padding.
+- Real alt text, semantic headings, the skip link, and the existing locale structure remain intact.

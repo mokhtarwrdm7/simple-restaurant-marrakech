@@ -27,7 +27,7 @@ export default function GlobalError({ reset }: { error: Error; reset: () => void
           </p>
           <h1 style={{ fontSize: 32, margin: "12px 0 8px", fontWeight: 800, letterSpacing: "-0.02em" }}>Un instant.</h1>
           <p style={{ fontSize: 15, opacity: 0.8, lineHeight: 1.6 }}>
-            Une erreur est survenue. Réessayez, ou contactez-nous directement — on
+            Une erreur est survenue. Réessayez, ou contactez-nous directement. On
             vous répond tout de suite. / Something went wrong. Please retry or reach us directly.
           </p>
           <div style={{ display: "flex", gap: 12, justifyContent: "center", flexWrap: "wrap", marginTop: 20 }}>
